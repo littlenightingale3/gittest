@@ -8,7 +8,22 @@
 
 using namespace std;
 
+void szyfruj(char tekst[], int klucz){
+    klucz = klucz % 26;
+    int i = 0; // indeks
+    while (tekst[i] != '\0'){
+        if (int)tekst[i] + klucz > 122) //nazwa tablicy indeks, odczytauje kolejny znak (int da am kod ascii)
+            tekst[i] = (char)((int)tekst[i] + klucz - 26)
+        else
+            ;
+        i ++;
 
+
+    }
+
+
+
+}
 
 
 int main(int argc, char **argv)
