@@ -6,7 +6,6 @@
 import sqlite3
 
 
-
 def kw_c(cur):# gdy """ """ przygotowanie zapytania
 
     cur.execute(""" 
@@ -80,37 +79,25 @@ def kw_f(cur):
     wyniki = cur.fetchall()  #feth - pobierz; fethall - pobierz wszystko
     for row in wyniki:# row - zmienna
         print(tuple(row))
-
-
-
-def kw g(cur):
+    
+    
+def dodaj(cur):
     cur.execute(""" 
-        SELECT imie,nazwisko,stanowisko 
-        (JulianDay())
-        FROM 
-        WHERE 
-        """)
-        
-    wyniki = cur.fetchall()  #feth - pobierz; fethall - pobierz wszystko
-    for row in wyniki:# row - zmienna
-        print(tuple(row))
-        
-        
-
-
-
-
-
+        INSERT INTO tbKlasy
+        VALUES(?, ?, ?, ?)
+    """, [None, '3C', 2015,2017])
 
 
 
 
 def main(args):
-    con = sqlite3.connect('pracownicy.sqlite3') # połączenie z bazą
+    con = sqlite3.connect('szkola.db') # połączenie z bazą
     cur = con.cursor() #utworzenie kursora(gdy coś robię w bazie)
     con.row_factory = sqlite3.Row #możliwość odwoływania się do nazwy kolumn
     
-    kw_f(cur)
+    dodaj(cur)
+    con.commit()
+    wyniki(cur.execute('SELECT * FROM tbKlasy'))
     
     return 0
 
