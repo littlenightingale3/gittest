@@ -9,6 +9,7 @@ con.row_factory = sqlite3.Row  # dostęp do kolumn przez indeksy i przez nazwy
 cur = con.cursor()  # utworzenie obiektu kursora
 
 
+
 def pokaz_wyniki(dane):
     for row in dane:
         print(tuple(row))
