@@ -1,15 +1,16 @@
+{% extends "szkielet.html" %}
+{% set active_page = "todo" %}
+{% block tytul %}Lista zadan{% endblock%}
+{% block h1 %}Quiz ORM &#8211; dodawanie zadan{% endblock%}
+{% block tresc %}
   <form method="POST" class="form-inline" action="">
     {{ form.csrf_token }}
 
-    {{ form.pytanie.label }}<br>
-    {{ form.pytanie(class="form-control") }}<br>
-    <br>
-    <label>Podaj odpowiedzi i zaznacz poprawną:</label><br>
-    <ol>
-    {% for o in form.odpowiedzi %}
-      <li>{{ radio[loop.index0] }} {{ o(class="form-control") }}</li>
-    {% endfor %}
-    </ol>
+    {{ form.zadanie.label }}<br>
+    {{ form.zadanie(class="form-control") }}<br>
 
-    <button type="submit" class="btn btn-default">Zapisz pytanie</button>
+
+    <button type="submit" class="btn btn-default">Zapisz zadanie</button>
   </form>
+{% endblock %}
+

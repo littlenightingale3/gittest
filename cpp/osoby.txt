@@ -1,0 +1,4 @@
+julia,slow,23
+Ania,szya,34
+julgs,gds,3
+kgds,shd,5
