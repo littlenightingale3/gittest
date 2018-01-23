@@ -4,10 +4,7 @@
  * 
  * 
  */
-//w domu sprobuwac napisac metode klasy ulamek, operacja skracania w klasie w metodach publicznych 
 
-
-//niczego nasza metoda ma nie zwracac,
 
 #include <iostream>
 #include "ul_ulamek.h"

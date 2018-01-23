@@ -1,15 +1,17 @@
+#ifndef ULAMEK_H
+#define ULAMEK_H
+
+
 /*
  * ulamek.cpp
  * 
  * 
  * 
  */
-//w domu sprobuwac napisac metode klasy ulamek, operacja skracania w klasie w metodach publicznych 
 
-
-//niczego nasza metoda ma nie zwracac,
 
 #include <iostream>
+
 
 using namespace std;
 
@@ -27,3 +29,4 @@ public:
     void skracaj();
 
 };
+#endif

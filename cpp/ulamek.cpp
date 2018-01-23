@@ -4,10 +4,7 @@
  * 
  * 
  */
-//w domu sprobuwac napisac metode klasy ulamek, operacja skracania w klasie w metodach publicznych 
 
-
-//niczego nasza metoda ma nie zwracac,
 
 #include <iostream>
 
@@ -33,21 +30,12 @@ public:
         return mianownik;
     }
     
-    void skracaj(){ //metoda drukuje skrocona postac ulamka, maja byc couty, znalezc najwieszky wspolny dzinnik licznika i mianownika (NWD), algorytm Euklides
- //wersja klasyczna, odejmujemy,, przypominamy sobie w wersji ktora byla       
-        ;
-    }
-    
+
 };
 
-void Ulamek::skracaj() {
-    //kod wykorzystujacy alghorytm euklidesa optymlany, jesli sie nie da skrocic to wyswietlamy normalny ulamek;
-    
-}
 
 
-
-void Ulamek::zapisz(int l, int m){ //wskazuje faunkcje zapisz w clasie ulamka
+void Ulamek::zapisz(int l, int m){ 
     licznik = l;
     if (m != 0) mianownik = m;
     else{
@@ -59,7 +47,7 @@ void Ulamek::zapisz(int l, int m){ //wskazuje faunkcje zapisz w clasie ulamka
 };
 
 
-Ulamek::Ulamek(int l, int m){ //wskazuje faunkcje zapisz w clasie ulamka
+Ulamek::Ulamek(int l, int m){ 
     licznik = l;
     if (m != 0) mianownik = m;
     else{
