@@ -67,8 +67,33 @@ bool Lista::Usun(){
 
 
 void Lista::Wstaw(int pozycja, int wartosc){
- ; //
-    
+	if (pozycja < 0)	pozycja *= (-1);
+    if(pozycja != 0){
+		if(pozycja > i){
+			Dodaj(wartosc);	
+		}
+		else if (pozycja == 1) {		
+			ELEMENT *el = new ELEMENT;
+			el -> wartosc = war;
+			el -> wskaznik = head;
+			head = el;
+			i++;
+		} else {
+			ELEMENT *el = new ELEMENT;
+			el -> wartosc1 = wartosc;	
+
+			ELEMENT *p = head;	
+
+			for (int j = 1; j != poz - 1; j++)
+				p = p -> wskaznik;
+
+			el -> wskaznik = p -> wskaznik;
+			p -> wskaznik = el;
+
+			i++;
+		}
+	}
+}
 }
 
 
