@@ -1,11 +1,4 @@
 /*
- * drzewo.cpp
- * 
- * 
- */
-
-
-/*
  * drzewo_bin.cpp
  * 
  * Copyright 2018  <>
@@ -13,11 +6,8 @@
  */
 
 #include <iostream>
-#include "drzewo.hpp"
 
-Wezel::Wezel(){
-}
-
+using namespace std;
 
 struct Wezel {
     int wartosc;
@@ -34,7 +24,7 @@ Wezel* stworzWezel(int wartosc) {
     return nowyWezel;
 }
 
-void Wezel::dodajWezel(Wezel *wezel, int wartosc) {
+void dodajWezel(Wezel *wezel, int wartosc) {
     if (korzen == NULL) { // drzewo jest puste!
         korzen = stworzWezel(wartosc); // utworzenie 1. elementu
     } else {
@@ -55,7 +45,7 @@ void Wezel::dodajWezel(Wezel *wezel, int wartosc) {
 }
 
 // funkcja rekurencyjnie przeglądająca drzewo
-void Wezel::wyswietlRosnoco(Wezel *wezel) {
+void wyswietlRosnoco(Wezel *wezel) {
     if (wezel != NULL) { // jeżeli węzeł nie jest pusty
         // rekurencyjnie wyswietl lewo poddrzewo
         wyswietlRosnoco(wezel->lewy);
@@ -67,7 +57,7 @@ void Wezel::wyswietlRosnoco(Wezel *wezel) {
 }
 
 
-void Wezel::wyswietlMalejaco(Wezel *wezel) {
+void wyswietlMalejaco(Wezel *wezel) {
     if (wezel != NULL) { // jeżeli węzeł nie jest pusty
         // rekurencyjnie wyswietl lewo poddrzewo
         wyswietlMalejaco(wezel->prawy);
@@ -97,5 +87,4 @@ int main(int argc, char **argv)
     
 	return 0;
 }
-
 

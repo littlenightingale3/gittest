@@ -16,10 +16,7 @@ class Drzewo {
         ~Drzewo ();
         void dodajWezel(Wezel *wezel, int wartosc);
         void wyswietlRosnaco(Wezel *wezel);
-        void wyswietlMalejaco(Wezel *wezel);
     
 };
 
 #endif
-
-

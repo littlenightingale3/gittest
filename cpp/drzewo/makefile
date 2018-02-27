@@ -1,9 +1,9 @@
 CXX=g++
 CXXFLAGS=-Wall -I.
-OBJS=drzewo.o drzewo_main.o
+OBJS=drzewo.o drzewo_bin.o
 
-pong: drzewo.o drzewo_main.o
-	$(CXX) $(CXXFLAGS) $(OBJS) -o ul_main.exe
+pong: drzewo.o drzewo_bin.o
+	$(CXX) $(CXXFLAGS) $(OBJS) -o drzewo.exe
 	
 .PHONY: clean
 

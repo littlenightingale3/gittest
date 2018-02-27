@@ -1,11 +1,4 @@
 /*
- * drzewo.cpp
- * 
- * 
- */
-
-
-/*
  * drzewo_bin.cpp
  * 
  * Copyright 2018  <>
@@ -15,9 +8,7 @@
 #include <iostream>
 #include "drzewo.hpp"
 
-Wezel::Wezel(){
-}
-
+using namespace std;
 
 struct Wezel {
     int wartosc;
@@ -34,7 +25,7 @@ Wezel* stworzWezel(int wartosc) {
     return nowyWezel;
 }
 
-void Wezel::dodajWezel(Wezel *wezel, int wartosc) {
+void dodajWezel(Wezel *wezel, int wartosc) {
     if (korzen == NULL) { // drzewo jest puste!
         korzen = stworzWezel(wartosc); // utworzenie 1. elementu
     } else {
@@ -54,48 +45,36 @@ void Wezel::dodajWezel(Wezel *wezel, int wartosc) {
     }
 }
 
-// funkcja rekurencyjnie przeglądająca drzewo
-void Wezel::wyswietlRosnoco(Wezel *wezel) {
-    if (wezel != NULL) { // jeżeli węzeł nie jest pusty
-        // rekurencyjnie wyswietl lewo poddrzewo
-        wyswietlRosnoco(wezel->lewy);
-        // wypisz wartość aktualnego węzła
-        cout << wezel->wartosc << ", ";
-        // rekurencyjnie wyswietl prawe poddrzewo
-        wyswietlRosnoco(wezel->prawy);
-    }
-}
-
-
-void Wezel::wyswietlMalejaco(Wezel *wezel) {
-    if (wezel != NULL) { // jeżeli węzeł nie jest pusty
-        // rekurencyjnie wyswietl lewo poddrzewo
-        wyswietlMalejaco(wezel->prawy);
-        // wypisz wartość aktualnego węzła
-        cout << wezel->wartosc << ", ";
-        // rekurencyjnie wyswietl prawe poddrzewo
-        wyswietlMalejaco(wezel->lewy);
+//funckja rekurencyjnie przegladajaca drzewo(funkcja wyswietl)
+void wyswietlRosnaco(Wezel *wezel){
+    if (wezel != NULL) { // jezeli wezel nie jest pusty
+        //rekurencyjnie wyswietl lewe poddrzewo
+        wyswietlRosnaco(wezel ->lewy);
+        //wypisz wartosc aktualego wezla
+        cout << wezel ->wartosc << " , ";
+        //rekurencyjnie wyswietl prawe poddrzewo
+        wyswietlRosnaco(wezel ->prawy);
+        
     }
 }
 
 
 int main(int argc, char **argv)
 {
-	dodajWezel(korzen, 10);
-	dodajWezel(korzen, 8);
-	dodajWezel(korzen, 4);
-	dodajWezel(korzen, 9);
-	dodajWezel(korzen, 20);
-	dodajWezel(korzen, 16);
-	dodajWezel(korzen, 30);
     
-    cout << "Posortowane drzewo (niemalejąco): "<< endl;
-    wyswietlRosnoco(korzen);
-    cout << "Posportowane drzewo (nierosnaco)" << endl;
-    wyswietlMalejaco(korzen);
-    delete korzen;  // zwolnienie wykorzystywanej pamięci
+    dodajWezel(korzen,10);
+    dodajWezel(korzen,8);
+    dodajWezel(korzen,15);
+    dodajWezel(korzen,63);
+    dodajWezel(korzen,8);
+    dodajWezel(korzen,1);
+    dodajWezel(korzen,100);
+	
+    cout << "posportowane drzewo(niemalejaco): ";
+    wyswietlRosnaco(korzen);
+    
+    delete korzen;
     
 	return 0;
 }
-
 
