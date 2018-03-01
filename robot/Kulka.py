@@ -20,7 +20,7 @@ class Robot:
         if len(lista_wrogow) > 2:
         #if ilu_wrogow > 2:
             return['suicide']
-        else:
+        elif len(lista_wrogow):
             return['attack',lista_wrogow[0]] #poz]
         print(game.robots)
 
