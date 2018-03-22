@@ -94,7 +94,7 @@ void Lista::Wstaw(int pozycja, int wartosc){
 		}
 	}
 }
-}
+
 
 
 
